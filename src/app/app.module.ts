@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { LayoutModule } from './template/template.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ScriptLoaderService } from "./services/script-loader.service";
 
 
 @NgModule({
@@ -10,9 +11,11 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    LayoutModule,
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [ScriptLoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
